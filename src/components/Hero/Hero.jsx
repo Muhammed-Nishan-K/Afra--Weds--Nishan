@@ -73,16 +73,20 @@ export default function Hero() {
         </motion.h2>
         
         <div className={styles.namesContainer}>
-          {titleText.split('').map((char, index) => (
-            <motion.span
-              key={index}
-              className={`${styles.names} calligraphy`}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.5 + index * 0.1, type: "spring", stiffness: 100 }}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </motion.span>
+          {["Afra", "&", "Nishan"].map((word, wordIndex) => (
+            <div key={wordIndex} className={styles.nameLine}>
+              {word.split('').map((char, index) => (
+                <motion.span
+                  key={index}
+                  className={`${styles.names} calligraphy`}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5 + (wordIndex * 5 + index) * 0.1, type: "spring", stiffness: 100 }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </div>
           ))}
         </div>
       </motion.div>

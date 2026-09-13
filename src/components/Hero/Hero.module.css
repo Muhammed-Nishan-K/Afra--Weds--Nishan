@@ -66,14 +66,22 @@
 
 .namesContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nameLine {
+  display: flex;
+  justify-content: center;
+  line-height: 1;
 }
 
 .names {
   font-size: 6rem;
   color: var(--foreground);
-  line-height: 1.2;
+  line-height: 1;
   display: inline-block;
 }
 
