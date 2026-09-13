@@ -1,12 +1,53 @@
 'use client';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import styles from './Hero.module.css';
+
+const bgImages = [
+  '/images/gallery/1.jpg',
+  '/images/gallery/2.jpg',
+  '/images/gallery/3.jpg',
+  '/images/gallery/4.jpg',
+  '/images/gallery/5.jpg',
+];
 
 export default function Hero() {
   const titleText = "Afra & Nishan";
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % bgImages.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
   
   return (
     <section className={styles.heroSection}>
+      <div className={styles.backgroundContainer}>
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={currentImageIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2 }}
+            className={styles.backgroundImage}
+          >
+            <Image
+              src={bgImages[currentImageIndex]}
+              alt="Background"
+              fill
+              unoptimized={true}
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          </motion.div>
+        </AnimatePresence>
+        <div className={styles.overlay}></div>
+      </div>
+
       <motion.div 
         className={styles.content}
         initial={{ opacity: 0 }}
