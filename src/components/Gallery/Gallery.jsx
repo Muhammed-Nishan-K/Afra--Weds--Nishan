@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Gallery.module.css';
@@ -12,6 +13,14 @@ const images = [
 ];
 
 export default function Gallery() {
+  const [revealedImages, setRevealedImages] = useState([]);
+
+  const toggleReveal = (id) => {
+    setRevealedImages(prev => 
+      prev.includes(id) ? prev.filter(imgId => imgId !== id) : [...prev, id]
+    );
+  };
+
   return (
     <section className={styles.gallerySection}>
       <motion.div 
@@ -21,7 +30,7 @@ export default function Gallery() {
         viewport={{ once: true }}
       >
         <h2 className={styles.title}>Our Moments</h2>
-        <p className={styles.subtitle}>Hover to reveal</p>
+        <p className={styles.subtitle}>Hover or tap to reveal</p>
       </motion.div>
 
       <div className={styles.grid}>
@@ -34,6 +43,7 @@ export default function Gallery() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
             whileHover="hover"
+            onClick={() => toggleReveal(img.id)}
           >
             <motion.div 
               className={styles.imageWrapper}
@@ -41,6 +51,7 @@ export default function Gallery() {
                 hover: { filter: "blur(0px)", scale: 1.05 }
               }}
               initial={{ filter: "blur(15px)", scale: 1 }}
+              animate={revealedImages.includes(img.id) ? "hover" : undefined}
               transition={{ duration: 0.4 }}
             >
               <Image
