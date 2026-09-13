@@ -1,0 +1,79 @@
+.gallerySection {
+  padding: 8rem 2rem;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.subtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-dark);
+  font-style: italic;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.imageCard {
+  width: calc(33.333% - 1.5rem);
+  height: 400px;
+  min-width: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--sepia);
+}
+
+/* Make sure the 4th and 5th items span a bit differently or just center nicely */
+.imageCard:nth-child(4),
+.imageCard:nth-child(5) {
+  width: calc(50% - 2rem);
+  height: 450px;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .imageCard, 
+  .imageCard:nth-child(4),
+  .imageCard:nth-child(5) {
+    width: calc(50% - 1rem);
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .imageCard, 
+  .imageCard:nth-child(4),
+  .imageCard:nth-child(5) {
+    width: 100%;
+    height: 400px;
+  }
+}

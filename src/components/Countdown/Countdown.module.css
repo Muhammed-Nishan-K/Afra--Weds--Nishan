@@ -1,0 +1,81 @@
+.countdownSection {
+  padding: 6rem 2rem;
+  background-color: var(--sepia);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.heading {
+  font-size: 2rem;
+  color: var(--accent-dark);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: var(--font-lora), serif;
+}
+
+.timerGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.timeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 140px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.number {
+  font-size: 4rem;
+  color: var(--foreground);
+  font-family: var(--font-lora), serif;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-dark);
+}
+
+.separator {
+  font-size: 3rem;
+  color: var(--accent);
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .timerGrid {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .timeBox {
+    min-width: 100px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .number {
+    font-size: 2.5rem;
+  }
+  
+  .separator {
+    display: none;
+  }
+}

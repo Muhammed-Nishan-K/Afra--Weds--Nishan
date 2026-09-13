@@ -1,0 +1,97 @@
+.revealSection {
+  padding: 8rem 2rem;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid var(--sepia);
+  border-bottom: 1px solid var(--sepia);
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.revealButton {
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.revealButton:hover {
+  background-color: var(--accent-dark);
+}
+
+.dateDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem;
+  background-color: var(--sepia);
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+}
+
+.dateBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.month, .year {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-dark);
+}
+
+.day {
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--foreground);
+  font-family: var(--font-great-vibes), cursive;
+}
+
+.timeBlock {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: var(--foreground);
+  border-top: 1px solid var(--accent);
+  padding-top: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .dateDisplay {
+    padding: 2rem;
+  }
+  
+  .day {
+    font-size: 4.5rem;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+}

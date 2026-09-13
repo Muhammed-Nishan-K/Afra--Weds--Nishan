@@ -1,0 +1,79 @@
+.heroSection {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: var(--background);
+  /* Optional subtle texture or gradient overlay could go here */
+}
+
+.content {
+  z-index: 2;
+  padding: 2rem;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-dark);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nikkahWord {
+  font-size: 3rem;
+  color: var(--accent);
+  text-transform: none;
+  letter-spacing: normal;
+  text-shadow: 0 0 20px rgba(189, 174, 147, 0.5);
+  margin: 0 0.5rem;
+}
+
+.namesContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.names {
+  font-size: 6rem;
+  color: var(--foreground);
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.line {
+  width: 1px;
+  height: 60px;
+  background-color: var(--accent-dark);
+}
+
+@media (max-width: 768px) {
+  .names {
+    font-size: 4rem;
+  }
+  .subtext {
+    font-size: 0.9rem;
+  }
+}
